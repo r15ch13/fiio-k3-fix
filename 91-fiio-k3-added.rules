@@ -1,0 +1,2 @@
+ACTION=="add", SUBSYSTEM=="sound", ENV{ID_VENDOR_ID}=="2972", ENV{ID_MODEL_ID}=="0047", RUN+="/usr/local/bin/fiio-k3-fix"
+ACTION=="remove", SUBSYSTEM=="sound", ENV{ID_VENDOR_ID}=="2972", ENV{ID_MODEL_ID}=="0047", RUN+="/usr/local/bin/fiio-k3-fix"

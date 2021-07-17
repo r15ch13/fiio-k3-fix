@@ -1,0 +1,14 @@
+[Unit]
+Description=Fiio K3 Fix
+Requires=pulseaudio.socket
+
+[Service]
+ExecStart=/usr/bin/ffplay -f lavfi -i anullsrc -nodisp
+Restart=on-failure
+
+SystemCallArchitectures=native
+MemoryDenyWriteExecute=true
+NoNewPrivileges=true
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+PULSEAUDIO_USER=$(ps -o user= -p `pidof pulseaudio`)
+
+if [[ -n $PULSEAUDIO_USER && -n $ACTION ]]; then
+    if [ $ACTION == "add" ]; then
+        systemctl --machine=${PULSEAUDIO_USER}@.host --user start fiio-k3-fix.service
+    else
+        systemctl --machine=${PULSEAUDIO_USER}@.host --user stop fiio-k3-fix.service
+    fi
+fi
